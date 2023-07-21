@@ -1,6 +1,6 @@
 # Grid Solver
 
-![Grid Solver Screenshot](src/main/resources/images/grid solver.PNG)
+![Grid Solver Screenshot](https://github.com/khaledJeetan/grid-solver/blob/a669c44747f43dcb496fa511f3271430f228c9c9/src/main/resources/images/grid%20solver.PNG)
 
 Grid Solver is an application that helps find the shortest path in a square grid with obstacles. The goal is to reach the target cell from the starting cell as quickly as possible. The implementation uses the A* Search Algorithm to efficiently find the optimal path.
 
