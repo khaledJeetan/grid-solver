@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="968.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aihw.GenerateGridController">
+   <left>
+      <VBox prefHeight="503.0" prefWidth="171.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <HBox layoutX="10.0" layoutY="25.0" prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="179.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;" text="GRID SIZE">
+                     <font>
+                        <Font name="Bookman Old Style Bold Italic" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="34.0" prefWidth="65.0" text="COLS">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="row" prefHeight="25.0" prefWidth="89.0" promptText="Ex:- 4" text="5" />
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="25.0" prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="34.0" prefWidth="65.0" text="ROWS">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="col" prefHeight="25.0" prefWidth="89.0" promptText="EX:- 4" text="5" />
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#onResizeGridButtonClick" prefHeight="32.0" prefWidth="171.0" text="Resize">
+               <font>
+                  <Font name="Bookman Old Style Bold Italic" size="15.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <HBox layoutX="10.0" layoutY="25.0" prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="195.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;" text="Start Location">
+                     <font>
+                        <Font name="Bookman Old Style Bold Italic" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="82.0" prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <RadioButton fx:id="start" mnemonicParsing="false" prefHeight="32.0" prefWidth="133.0" selected="true" text="Change Start">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="configure" />
+                     </toggleGroup>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Separator layoutX="10.0" layoutY="181.0" prefWidth="200.0" />
+            <HBox layoutX="10.0" layoutY="194.0" prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="195.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;" text="Goal Location">
+                     <font>
+                        <Font name="Bookman Old Style Bold Italic" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="236.0" prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <RadioButton fx:id="goal" mnemonicParsing="false" prefHeight="32.0" prefWidth="135.0" text="change End" toggleGroup="$configure">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Separator layoutX="10.0" layoutY="278.0" prefWidth="200.0" />
+            <HBox layoutX="10.0" layoutY="291.0" prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="192.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;" text=" Obstacles">
+                     <font>
+                        <Font name="Bookman Old Style Bold Italic" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="333.0" prefHeight="32.0" prefWidth="177.0">
+               <children>
+                  <RadioButton fx:id="blocked" mnemonicParsing="false" prefHeight="32.0" prefWidth="143.0" text="set Blocked" toggleGroup="$configure">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Separator layoutX="10.0" layoutY="375.0" prefWidth="200.0" />
+            <HBox layoutX="10.0" layoutY="388.0" prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="192.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;" text="Available">
+                     <font>
+                        <Font name="Bookman Old Style Bold Italic" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="430.0" prefHeight="32.0" prefWidth="156.0">
+               <children>
+                  <RadioButton fx:id="unblocked" mnemonicParsing="false" prefHeight="30.0" prefWidth="131.0" text="set UnBlocked" toggleGroup="$configure">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="192.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;" text="Choose Algorithm">
+               <font>
+                  <Font name="Bookman Old Style Bold Italic" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <HBox alignment="CENTER">
+               <children>
+                  <RadioButton fx:id="Euclidean" mnemonicParsing="false" prefHeight="32.0" prefWidth="97.0" selected="true" text="Euclidean">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="algorithm" />
+                     </toggleGroup>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <RadioButton fx:id="manhattan" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" text="Manhattan" toggleGroup="$algorithm">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane fx:id="paneGrid" prefHeight="406.0" prefWidth="559.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </center>
+   <top>
+      <Label alignment="CENTER" prefHeight="56.0" prefWidth="805.0" text="GRID GENERATOR" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Bookman Old Style Bold" size="32.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="37.0" prefWidth="921.0" spacing="50.0" style="-fx-background-color: #0066cc;">
+         <children>
+            <Label fx:id="stepsNumber" prefHeight="40.0" prefWidth="191.0" textFill="#f5f4f4">
+               <font>
+                  <Font name="Bookman Old Style Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="51.0" prefWidth="154.0" style="-fx-border-radius: 25%; -fx-border-color: white; -fx-background-color: transparent; -fx-background-radius: 50%;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold Italic" size="20.0" />
+               </font></Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onSolveButtonClick" prefHeight="51.0" prefWidth="154.0" style="-fx-border-radius: 25%; -fx-border-color: white; -fx-background-color: transparent; -fx-background-radius: 50%;" text="Solve" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold Italic" size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="2.0" top="2.0" />
+         </padding></HBox>
+   </bottom>
+</BorderPane>
